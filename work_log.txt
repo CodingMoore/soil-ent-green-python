@@ -18,4 +18,8 @@ Work_log
 
 12:00 - 01:00 Nom nom noms
 
-1:00 - : Begin writing test code for pi data collection.
+1:00 - 2:00: Split python files from react files, making two separate projects.
+
+2:00 - 3:45: Figured out how to use python to map a range of numbers to a  different range of numbers to get a percentage.
+
+
