@@ -1,0 +1,14 @@
+Pi:
+
+VS Code (https://learn.adafruit.com/visual-studio-code-for-the-raspberry-pi/vscode-installation)
+SSH (https://www.raspberrypi.org/documentation/remote-access/ssh/README.md)
+SFTP SFTP/FTP sync by liximono (on PCs VS code)(https://github.com/liximomo/vscode-sftp/wiki/Commands)
+ECDSA key fingerpring (https://www.raspberrypi-spy.co.uk/2019/02/setting-up-ssh-keys-on-the-raspberry-pi/)
+
+https://shop.switchdoc.com/collections/break-out-boards/products/grove-4-channel-16-bit-analog-to-digital-converter
+
+https://shop.switchdoc.com/products/pi2grover-raspberry-pi-to-grove-connector-interface-board?pr_prod_strat=copurchase&pr_rec_pid=229338251294&pr_ref_pid=229332680734&pr_seq=uniform
+
+https://shop.switchdoc.com/products/capacitive-plant-moisture-sensor-grove?pr_prod_strat=copurchase&pr_rec_pid=1447107919916&pr_ref_pid=229332680734&pr_seq=uniform
+
+https://shop.switchdoc.com/products/grove-30cm-universal-4-pin-5-pack?_pos=6&_sid=fa54a719d&_ss=r

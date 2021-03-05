@@ -1,0 +1,40 @@
+1) Set up Raspberry pi 3b+ (or 4?) with the official operating system.
+
+2) turn on I2C ports on the pi and install i2c utilities.
+https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
+
+  sudo apt-get update
+  sudo apt-get install -y python-smbus i2c-tools
+
+  shutdown your Pi using...
+  sudo halt
+  wait ten seconds, disconnect the power to your pi, connect hardware... 
+
+3) Connect the "pi2grover" board to the raspberry pi via the 40-pin connector.
+
+4) Connect the one of the 4 "I2C" pinouts on the "pi2grover" board to the "I2C" pinout on the analog to digital converter using a "4-pin Grove Cable".
+
+5) Connect one of the 4 analog pinouts on the analog to digital connector to the capacitive soil sensor using the "gravity cable" included with the sensor.
+
+6) Install analog to digital converter program.
+    sudo apt-get update
+    sudo apt-get install build-essential python-dev python-smbus git
+    sudo pip3 install Adafruit-ADS1x15
+    cd ~
+    git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
+    cd Adafruit_Python_ADS1x15
+    sudo python3 setup.py install
+
+7) Run test program
+
+    cd Adafruit_Python_ADS1x15/examples
+    sudo python3 simpletest.py
+
+    verify data is being retreived in the console.
+
+8)  
+
+
+
+
+

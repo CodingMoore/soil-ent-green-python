@@ -1,0 +1,21 @@
+Work_log
+
+2021-01-26
+
+8:00 - 10:00: Researching data visualization libraries.
+10:00 - 11:00: Researching React vs. React Native. 
+11:00 - 12:30: Researching Rasperry pi hardware/sensor components.
+12:30 - 3:00: Appointments
+3:00 - 5:00: Installing Rasperry Pi OS onto Raspberry Pi 3B+.  Trouble-shooting undervoltage warnings from Pi.
+
+2021-02-28
+
+3:00 - 7:00: Setting up pi development environment.
+
+2021-03-05
+
+8:00 - 12:00: Setting up raspberry pi hardware and sensor drivers.  Verifying that soil sensor sends data to the pi terminal.
+
+12:00 - 01:00 Nom nom noms
+
+1:00 - : Begin writing test code for pi data collection.
