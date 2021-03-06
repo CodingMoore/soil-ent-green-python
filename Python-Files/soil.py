@@ -14,6 +14,9 @@ config = {
   "storageBucket": STORAGE_BUCKET
 }
 
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
+
 adc = Adafruit_ADS1x15.ADS1115()
 
 GAIN = 1
@@ -43,5 +46,10 @@ while True:
 
     print("Channel 0: {0}".format(dataObject))
 
+    db.child("Pi-1").child("1-set").set(dataObject)
+    db.child("Pi-1").child("2-push").push(data)
+
     #print("Channel 0: {0}".format(percent))
     time.sleep(3)
+
+
