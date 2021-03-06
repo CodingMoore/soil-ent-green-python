@@ -2,7 +2,7 @@ import time
 import Adafruit_ADS1x15
 from datetime import datetime
 import pyrebase
-from .env import API_KEY, AUTH_DOMAIN, DATABASE_URL, STORAGE_BUCKET
+from envVar.txt import API_KEY, AUTH_DOMAIN, DATABASE_URL, STORAGE_BUCKET
 
 dryValue = 2.23  #Calibration Value with sensor in Air (/10000)
 wetValue = 1.09  #Calibration Value with sensor in Water (/10000)
