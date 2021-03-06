@@ -1,5 +1,6 @@
 import time
 import Adafruit_ADS1x15
+from datetime import datetime
 
 dryValue = 2.23  #Calibration Value with sensor in Air (/10000)
 wetValue = 1.09  #Calibration Value with sensor in Water (/10000)
@@ -25,5 +26,13 @@ while True:
     voltage = value/10000
     
     percent = mapToPercent(voltage,dryValue,wetValue,0,100)
-    print("Channel 0: {0}".format(percent))
+
+    dataObject = {
+      "dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+      "moisture": percent
+    }
+
+    print("Channel 0: {0}".format(dataObject))
+
+    #print("Channel 0: {0}".format(percent))
     time.sleep(3)

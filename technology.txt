@@ -12,3 +12,15 @@ https://shop.switchdoc.com/products/pi2grover-raspberry-pi-to-grove-connector-in
 https://shop.switchdoc.com/products/capacitive-plant-moisture-sensor-grove?pr_prod_strat=copurchase&pr_rec_pid=1447107919916&pr_ref_pid=229332680734&pr_seq=uniform
 
 https://shop.switchdoc.com/products/grove-30cm-universal-4-pin-5-pack?_pos=6&_sid=fa54a719d&_ss=r
+
+https://www.piddlerintheroot.com/capacitive-soil-moisture-sensor-v2-0/
+https://www.youtube.com/watch?v=UWbeHqyzP-c
+
+https://github.com/adafruit/Adafruit_Python_ADS1x15
+
+https://www.youtube.com/watch?v=_cdQ0BsMt-Y
+
+https://openbase.com/python/Pyrebase
+
+    Possible https://pypi.org/project/Adafruit-Blinka/
+    Possible https://tutorial.cytron.io/2020/12/09/send-data-to-firebase-using-raspberry-pi/

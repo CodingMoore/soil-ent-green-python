@@ -35,6 +35,7 @@ https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-rasp
 8) Install numpy
     sudo pip3 install numpy
 
+9) sudo pip3 install pyrebase
 
 
 

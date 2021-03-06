@@ -22,4 +22,11 @@ Work_log
 
 2:00 - 3:45: Figured out how to use python to map a range of numbers to a  different range of numbers to get a percentage.
 
+3:45 - 4:30: Researching how to connect my pi to firebase/firestore
 
+4:30 - 5:00: Adding Date/Time to sensor data logs
+
+
+2021-03-06
+
+8:45 - : Set up firebase real-time database.
