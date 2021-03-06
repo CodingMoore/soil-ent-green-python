@@ -2,16 +2,16 @@ import time
 import Adafruit_ADS1x15
 from datetime import datetime
 import pyrebase
-from envVar.txt import API_KEY, AUTH_DOMAIN, DATABASE_URL, STORAGE_BUCKET
+import envVar
 
 dryValue = 2.23  #Calibration Value with sensor in Air (/10000)
 wetValue = 1.09  #Calibration Value with sensor in Water (/10000)
 
 config = {
-  "apiKey": API_KEY,
-  "authDomain": AUTH_DOMAIN,
-  "databaseURL": DATABASE_URL,
-  "storageBucket": STORAGE_BUCKET
+  "apiKey": envVar.API_KEY,
+  "authDomain": envVar.AUTH_DOMAIN,
+  "databaseURL": envVar.DATABASE_URL,
+  "storageBucket": envVar.STORAGE_BUCKET
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -47,7 +47,7 @@ while True:
     print("Channel 0: {0}".format(dataObject))
 
     db.child("Pi-1").child("1-set").set(dataObject)
-    db.child("Pi-1").child("2-push").push(data)
+    db.child("Pi-1").child("2-push").push(dataObject)
 
     #print("Channel 0: {0}".format(percent))
     time.sleep(3)

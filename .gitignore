@@ -1,6 +1,4 @@
 .vscode/sftp.json
 .env
-envVar.txt
 envVar.py
-Python-Files/envVar.txt
-Python-Files/envVar.py
+
