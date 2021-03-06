@@ -39,7 +39,10 @@ while True:
     
     percent = mapToPercent(voltage,dryValue,wetValue,0,100)
 
+    #"timestamp": {".sv": "timestamp"} read by firebase and converted into a SERVER timestamp.
+    #"dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S") creates a CLENT date/time string with formatting.
     dataObject = {
+      "timestamp": {".sv": "timestamp"},
       "dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
       "moisture": percent
     }
@@ -49,7 +52,6 @@ while True:
     db.child("Pi-1").child("1-set").set(dataObject)
     db.child("Pi-1").child("2-push").push(dataObject)
 
-    #print("Channel 0: {0}".format(percent))
     time.sleep(3)
 
 
