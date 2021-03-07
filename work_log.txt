@@ -29,4 +29,16 @@ Work_log
 
 2021-03-06
 
-8:45 - : Set up firebase real-time database.
+8:45 - 10:45: Set up firebase real-time database.
+
+10:45 - 12:30: Baby and bean-dip
+
+12:30 - 2:40: Researching authentication with firebase realtime database.
+
+2:40 - 3:30: Walk with the family
+
+3:30 - 5:25: Further attempts to empletment authentication for IoT devices. Cursing authentication to hell.
+
+5:25 - 6:15: Creating React Diagram.
+
+

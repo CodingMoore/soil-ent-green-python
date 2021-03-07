@@ -40,7 +40,7 @@ while True:
     percent = mapToPercent(voltage,dryValue,wetValue,0,100)
 
     #"timestamp": {".sv": "timestamp"} read by firebase and converted into a SERVER timestamp.
-    #"dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S") creates a CLENT date/time string with formatting.
+    #"dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S") creates a CLIENT date/time string with formatting.
     dataObject = {
       "timestamp": {".sv": "timestamp"},
       "dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
