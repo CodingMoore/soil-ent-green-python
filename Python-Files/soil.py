@@ -49,8 +49,8 @@ while True:
 
     print("Channel 0: {0}".format(dataObject))
 
-    db.child("Pi-1").child("1-set").set(dataObject)
-    db.child("Pi-1").child("2-push").push(dataObject)
+    db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
+    db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
 
     time.sleep(3)
 
