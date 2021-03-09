@@ -37,6 +37,12 @@ https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-rasp
 
 9) sudo pip3 install pyrebase
 
+10) start over
+
+11) sudo pip3 install firebase-admin
+
+12) 
+
 
 
 

@@ -3,11 +3,6 @@ import Adafruit_ADS1x15
 from datetime import datetime
 import pyrebase
 import envVar
-import firebase_admin
-from firebase_admin import credentials, firestore
-
-#cred = credentials.Certificate("serviceAccountKey.json")
-
 
 dryValue = 2.23  #Calibration Value with sensor in Air (/10000)
 wetValue = 1.09  #Calibration Value with sensor in Water (/10000)
@@ -16,20 +11,11 @@ config = {
   "apiKey": envVar.API_KEY,
   "authDomain": envVar.AUTH_DOMAIN,
   "databaseURL": envVar.DATABASE_URL,
-  "projectId": envVar.PROJECT_ID,
-  "storageBucket": envVar.STORAGE_BUCKET,
-  "messagingSenderId": envVar.MESSAGING_SENDER_ID,
-  "appId": envVar.APP_ID 
+  "storageBucket": envVar.STORAGE_BUCKET
 }
 
-cred = credentials.Certificate("serviceAccountKey.json")
-
-firebase_admin.initialize_app(cred)
-
-firestore_db = firestore.client()
-
-#firebase = pyrebase.initialize_app(config)
-#db = firebase.database()
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
 
 adc = Adafruit_ADS1x15.ADS1115()
 
@@ -63,10 +49,8 @@ while True:
 
     print("Channel 0: {0}".format(dataObject))
 
-    firestore_db.collection("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").add(dataObject)
-
-    # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
-    # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
+    db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
+    db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
 
     time.sleep(3)
 
