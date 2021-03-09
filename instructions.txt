@@ -41,7 +41,11 @@ https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-rasp
 
 11) sudo pip3 install firebase-admin
 
-12) 
+12) follow instructions from here...
+
+    https://medium.com/faun/getting-started-with-firebase-cloud-firestore-using-python-c6ab3f5ecae0
+
+
 
 
 
