@@ -63,7 +63,9 @@ while True:
 
     print("Channel 0: {0}".format(dataObject))
 
-    firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture").add(dataObject)
+    firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_latest").document("latest").set(dataObject)
+
+    firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_running").add(dataObject)
 
     # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
     # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
