@@ -55,21 +55,24 @@ while True:
 
     #"timestamp": {".sv": "timestamp"} read by firebase and converted into a SERVER timestamp.
     #"dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S") creates a CLIENT date/time string with formatting.
+    
     dataObject = {
       "timestamp": firestore.SERVER_TIMESTAMP,
-      "dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+      "dateTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
       "moisture": percent
     }
 
     print("Channel 0: {0}".format(dataObject))
 
-    firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_latest").document("latest").set(dataObject)
+    # firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_latest").document("latest").set(dataObject)
 
-    firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_running").add(dataObject)
+    firestore_db.collection("hardware").add(dataObject)
 
     # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
     # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
 
-    time.sleep(3)
+    #2 minute delay between readings
+    time.sleep(120)
+
 
 
