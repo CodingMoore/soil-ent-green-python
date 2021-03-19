@@ -57,22 +57,19 @@ while True:
     #"dateTime": datetime.now().strftime("%d/%m/%Y %H:%M:%S") creates a CLIENT date/time string with formatting.
     
     dataObject = {
-      "timestamp": firestore.SERVER_TIMESTAMP,
+      #"timestamp": firestore.SERVER_TIMESTAMP,
       "dateTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-      "moisture": percent
+      "moisture": percent,
+      "machineName": "v001-L33t-p90X-t800"
     }
 
     print("Channel 0: {0}".format(dataObject))
 
-    # firestore_db.collection("hardware").document("v001-L33t-p90X-t800").collection("soilMoisture_latest").document("latest").set(dataObject)
-
+    #WORKING VERSION!!!
     firestore_db.collection("hardware").add(dataObject)
 
-    # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("latest").set(dataObject)
-    # db.child("hardware").child("v001-L33t-p90X-t800").child("soilMoisture").child("running").push(dataObject)
-
-    #2 minute delay between readings
-    time.sleep(120)
+    # 2 second delay between readings
+    time.sleep(2)
 
 
 
