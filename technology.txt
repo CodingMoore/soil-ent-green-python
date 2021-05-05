@@ -1,9 +1,7 @@
-Pi:
-
 VS Code (https://learn.adafruit.com/visual-studio-code-for-the-raspberry-pi/vscode-installation)
 SSH (https://www.raspberrypi.org/documentation/remote-access/ssh/README.md)
 SFTP SFTP/FTP sync by liximono (on PCs VS code)(https://github.com/liximomo/vscode-sftp/wiki/Commands)
-ECDSA key fingerpring (https://www.raspberrypi-spy.co.uk/2019/02/setting-up-ssh-keys-on-the-raspberry-pi/)
+ECDSA key fingerprint (https://www.raspberrypi-spy.co.uk/2019/02/setting-up-ssh-keys-on-the-raspberry-pi/)
 
 https://shop.switchdoc.com/collections/break-out-boards/products/grove-4-channel-16-bit-analog-to-digital-converter
 
