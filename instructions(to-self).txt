@@ -1,4 +1,4 @@
-1) Set up Raspberry pi 3b+ (or 4?) with the official operating system.
+1) Set up Raspberry pi 3b+ (or 4?) with the official operating system. https://www.raspberrypi.org/software/
 
 2) turn on I2C ports on the pi and install i2c utilities.
 https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
