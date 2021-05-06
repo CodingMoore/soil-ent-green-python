@@ -4,8 +4,8 @@ from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-dryValue = 0.000223
-wetValue = 0.000109
+dryValue = 22300
+wetValue = 10900
 
 # serviceAccountKey.json is not included in this repo for security reasons.  The README contains instructions for re-creating this file.
 cred = credentials.Certificate("serviceAccountKey.json")
@@ -30,9 +30,9 @@ adc.start_adc(0, gain=GAIN)
 
 print("Readout of Soil Moisture Data Begins Now")
 
-while True:
-    voltage = adc.get_last_result()
-    percent = mapToPercent(voltage,dryValue,wetValue,0,100)
+while True: 
+    sensorValue = adc.get_last_result()
+    percent = mapToPercent(sensorValue,dryValue,wetValue,0,100)
 
     dataObject = {
       "dateTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -40,7 +40,7 @@ while True:
       "machineName": "v001-L33t-p90X-t800"
     }
 
-    print("Channel 0: {0}".format(dataObject))
+    print("Channel 0: Sensor Value = {0}, Data Object = {1}".format(sensorValue, dataObject))
 
     firestore_db.collection("hardware").add(dataObject)
 

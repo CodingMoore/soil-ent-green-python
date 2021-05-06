@@ -78,7 +78,7 @@ All of the previous steps, including additional troubleshooting step can be foun
 
     <code>sudo pip3 install Adafruit-ADS1x15</code>
 
-    <code>sudo python3 setup.py install</code>
+    <code>sudo python3 setup&period;py install</code>
 
     <code>sudo pip3 install numpy</code>
 
@@ -105,7 +105,7 @@ All of the previous steps, including additional troubleshooting step can be foun
 
 6) Move the unzipped "__soil-ent-green-Python__" file into your "__/home/pi/projects__" folder.
 
-7) Open "soil.py" file found in __/home/pi/projects/soil-ent-green-python/Python-Files__.  Find the following code at the bottom of the file and replace the number in the parenthesis with your desired sensor reading interval. This number represents the interval between readings in seconds.  For demonstration purposes, it is set by default to 2 seconds.  For actual use, you would probably want the value to be some number of hours between readings.
+7) Open "soil&period;py" file found in __/home/pi/projects/soil-ent-green-python/Python-Files__.  Find the following code at the bottom of the file and replace the number in the parenthesis with your desired sensor reading interval. This number represents the interval between readings in seconds.  For demonstration purposes, it is set by default to 2 seconds.  For actual use, you would probably want the value to be some number of hours between readings.
 
 ```
 time.sleep(2)
@@ -121,7 +121,7 @@ dataObject= {
 }
 ```
 
-  The value __v001-L33t-p90X-t800__ inside of the quotation marks is the Machine Name.  You write this down carefully, as you will need to enter this string exactly when adding a plant to the React App.  You are free to change this string to anything, so what you enter into the React App and the "soil.py" __dataObject__ value are the same.
+  The value __v001-L33t-p90X-t800__ inside of the quotation marks is the Machine Name.  You write this down carefully, as you will need to enter this string exactly when adding a plant to the React App.  You are free to change this string to anything, so what you enter into the React App and the "soil&period;py" __dataObject__ value are the same.
 
 <br/>
 
@@ -180,7 +180,7 @@ __Your private key gives access to your project's Firebase services. Keep it con
 
 <hr/>
 
-### __Warning:__ Once the Python/Raspberry Pi application has been started, it will continue to send data to Firestore at the "__time.sleep()__" interval that you have set in the "__soil.py__" file  (default: 2 seconds).  It will do so until the application is stopped, or the Pi is shut down. Viewing a live data graph in the React app will also count toward your read/write limits whenever new data points appear.
+### __Warning:__ Once the Python/Raspberry Pi application has been started, it will continue to send data to Firestore at the "__time.sleep()__" interval that you have set in the "__soil&period;py__" file  (default: 2 seconds).  It will do so until the application is stopped, or the Pi is shut down. Viewing a live data graph in the React app will also count toward your read/write limits whenever new data points appear.
 
 <br/>
 
@@ -197,7 +197,7 @@ Open a terminal on the Pi and navigate to /home/pi/projects/soil-ent-green-pytho
 
 <br/>
 
-To Start:  <code>sudo python3 soil.py</code>
+To Start:  <code>sudo python3 soil&period;py</code>
 
 ### To Stop: __ctrl+c__
 <br/>
@@ -205,7 +205,7 @@ To Start:  <code>sudo python3 soil.py</code>
 
 While the application is running, you should see a notification in the pi's console every time a sensor reading is taken and uploaded to Firestore.
 
-If you log into the React application and click on the plant that you have created using the "Machine Name" found in the soil.py file, a live graph of the moisture data should be generated.
+If you log into the React application and click on the plant that you have created using the "Machine Name" found in the soil&period;py file, a live graph of the moisture data should be generated.
 
 <br/>
 
@@ -219,9 +219,9 @@ Once you are getting readings in the pi console from your sensor, you can calibr
 
 3) Shut down the application by typing __ctrl+c__ in the terminal.
 
-4) Change the "wetValue" and "dryValue" numbers at the top of the soil.py file with the values you just got from your calibration. It is normal for these values to be very small.  For example, __dryValue = 0.000223__, __wetValue = 0.000109__
+4) Change the "wetValue" and "dryValue" numbers at the top of the soil&period;py file with the values you just got from your calibration. It is normal for these values to be very small.  For example, __dryValue = 0.000223__, __wetValue = 0.000109__
 
-5) Save the soil.py file
+5) Save the soil&period;py file
 
 <br/>
 
@@ -232,7 +232,7 @@ Once you are getting readings in the pi console from your sensor, you can calibr
 
 <br/>
 
-## Technology Used (Combined React and Python apps)**
+## **Technology Used (Combined React and Python apps)**
 __Hardware:__<br/>
 * [Raspberry Pi 3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) <br/>
 * SwitchDoc [Capacitive Plant Moisture Sensor](https://shop.switchdoc.com/products/capacitive-plant-moisture-sensor-grove?pr_prod_strat=copurchase&pr_rec_pid=1447107919916&pr_ref_pid=229332680734&pr_seq=uniform) Corrosion Resistant Grove<br/>
