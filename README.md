@@ -25,15 +25,17 @@ A "Raspberry Pi" running the Soil-Ent-Green Python application is used to gather
 
 The React application has full C.R.U.D. capabilities and utilizes Firebase Authentication, so a user can only access, add, edit, and delete their own plants and database data.  As plant information is stored in the Firestore database with the sensor data, this application could be utilized by the user from any browser/device (if the application were deployed).
 
-The Python application can be modified to account for individual sensor calibration and to adjust the interval between sensor readings.  For the purposes of quick demos, this interval is currently set to 2 seconds.
+The Python application can be modified to account for individual sensor calibration and to adjust the interval between sensor readings.  For the purposes of quick demos and easy sensor calibration, this interval is set to 2 seconds by default.
 
 <br/>
 
 ## **Project Explanation**
 
-Soil-Ent-Green is an exercise/experiment in figuring out how a hardware product might be paired with its software without the user being required to edit any code. With respect to this, we are assuming that the "Machine Name" that is entered into the "New Plant" creation form, is written somewhere on the hardware's exterior.  
+Soil-Ent-Green is an exercise/experiment in figuring out how a hardware product might be paired with its web app, without the user being required to edit any code. 
 
-For the purposes of this project, a Raspberry Pi is used instead of custom hardware.  If this were a "real" product, the hardware would have be factory programmed with this unique "machine name" and database authentication key.
+If this were a "real" product, custom hardware would be used instead of a Raspberry Pi, and it would come factory programmed with a unique "Machine Name" and database authentication key. The "Machine Name" would be printed on the hardware's exterior so that a user can easily find it and type it into the plant creation form in the React app.  
+
+
 
 <br/>
 
@@ -105,7 +107,7 @@ All of the previous steps, including additional troubleshooting step can be foun
 
 6) Move the unzipped "__soil-ent-green-Python__" file into your "__/home/pi/projects__" folder.
 
-7) Open "soil&period;py" file found in __/home/pi/projects/soil-ent-green-python/Python-Files__.  Find the following code at the bottom of the file and replace the number in the parenthesis with your desired sensor reading interval. This number represents the interval between readings in seconds.  For demonstration purposes, it is set by default to 2 seconds.  For actual use, you would probably want the value to be some number of hours between readings.
+7) Open "soil&period;py" file found in __/home/pi/projects/soil-ent-green-python/Python-Files__.  Find the following code at the bottom of the file and replace the number in the parenthesis with your desired sensor reading interval. This number represents the interval between readings in seconds.  For the purposes of quick demos and easy sensor calibration, it is set by default to 2 seconds.  For actual use, you would probably want the value to be some number of hours between readings.
 
 ```
 time.sleep(2)
@@ -125,42 +127,10 @@ dataObject= {
 
 <br/>
 
-## **Create a serviceAccountKey.json File (and a ".gitignore" file)**
+## **Create a serviceAccountKey.json File**
+<br/>
 
-Creating a ".gitignore" file is technically optional, but having it will help prevent you from accidentally pushing this project to your github account and exposing your secret Firebase Key values to the world.  If you do not have a github account, or will never push this project to your github, the creation of the ".gitignore" can be skipped and you can move on to creating the serviceAccountKey.json file.
-
-Create a new folder in the root directory of the Soil-Ent-Green project, called "__.gitignore__".  Copy and paste in the following lines of text...
-
-```
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env
-serviceAccountKey.json
-
-add-read-example.js
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-```
-__Save this new file, make a commit, and push the project to github BEFORE continuing to the next step.__
+__Before creating your serviceAccountKey.json file, make sure to push this project to your github account.  If you do not, you risk accidentally exposing your secret account information to the world.__
 
 You should have already set up your Firestore database using the instructions found in the Soil-Ent-Green React application README.  If you have not done this, please do so now.  The React application can be found [HERE](https://github.com/CodingMoore/soil-ent-green-react-v2).
 
@@ -202,8 +172,9 @@ To Start:  <code>sudo python3 soil&period;py</code>
 ### To Stop: __ctrl+c__
 <br/>
 
+When the application starts, you should see the following message in the terminal:
 
-While the application is running, you should see a notification in the pi's console every time a sensor reading is taken and uploaded to Firestore.
+"__Readout of Soil Moisture Data Begins Now__"
 
 If you log into the React application and click on the plant that you have created using the "Machine Name" found in the soil&period;py file, a live graph of the moisture data should be generated.
 
@@ -211,15 +182,15 @@ If you log into the React application and click on the plant that you have creat
 
 ## __Sensor Calibration__
 
-Once you are getting readings in the pi console from your sensor, you can calibrate it.
+Once you are getting readings in the Pi's terminal from your sensor, you can calibrate it. "Sensor Value" should appear in the terminal ever time a sensor reading is made.  When taking the following sensor readings, allow the values to stabilize over a few seconds before writing them down.
 
-1) With the sensor completely dry, and dangling in the air (do not hold it directly), write down the sensor value reading.  This will be your "dryValue".
+1) With the sensor completely dry, and dangling in the air (do not hold it directly), write down the Sensor Value.  This will be your "dryValue".
 
-2) Dip the sensor in a class of water to just __BELOW__ the white line, __BELOW__ the sensor circuitry.  Do not get the sensor we above this line.  Steps can be taken to waterproof the sensor, but are not covered here.  Write down the sensor reading.  This will be your "wetValue".
+2) Dip the sensor in a class of water to just __BELOW__ the white line, __BELOW__ the sensor circuitry.  Do not get the sensor wet above this line.  Steps can be taken to waterproof the sensor, but are not covered here.  Write down the Sensor Value.  This will be your "wetValue".
 
 3) Shut down the application by typing __ctrl+c__ in the terminal.
 
-4) Change the "wetValue" and "dryValue" numbers at the top of the soil&period;py file with the values you just got from your calibration. It is normal for these values to be very small.  For example, __dryValue = 0.000223__, __wetValue = 0.000109__
+4) Change the "wetValue" and "dryValue" numbers at the top of the soil&period;py file with the values you just got from your calibration testing. It is normal for these values to be large.  For example, __dryValue = 22300__, __wetValue = 10900__
 
 5) Save the soil&period;py file
 

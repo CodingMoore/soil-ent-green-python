@@ -35,9 +35,9 @@ while True:
     percent = mapToPercent(sensorValue,dryValue,wetValue,0,100)
 
     dataObject = {
-      "dateTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-      "moisture": percent,
-      "machineName": "v001-L33t-p90X-t800"
+        "dateTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "moisture": percent,
+        "machineName": "v001-L33t-p90X-t800"
     }
 
     print("Channel 0: Sensor Value = {0}, Data Object = {1}".format(sensorValue, dataObject))
